@@ -3,7 +3,7 @@
 import {
   Bar,
   BarChart,
-  CartesianGrid,
+  // CartesianGrid,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -27,11 +27,13 @@ export const MarksBarChart = () => {
       <BarChart data={data} margin={{ right: 10, left: -30 }}>
         {/* <CartesianGrid strokeDasharray="3 3" /> */}
         <XAxis
+          opacity={0.8}
           dataKey="day"
           tick={{ fill: "var(--color-base-content)", fontSize: 12 }}
           stroke="var(--color-base-content)"
         />
         <YAxis
+          opacity={0.8}
           domain={[0, 5]}
           ticks={[0, 1, 2, 3, 4, 5]}
           tick={{ fill: "var(--color-base-content)", fontSize: 12 }}
@@ -46,9 +48,13 @@ export const MarksBarChart = () => {
             const { deepSleep, remSleep } = payload[0].payload;
 
             return (
-              <div className="bg-base-200 text-base-content rounded-lg p-3 shadow-lg opacity-93  border border-base-300">
-                <p className="m-0 font-semibold">{label}</p>
-                <div className="mt-1 flex flex-col gap-1 text-sm">
+              <div className="bg-base-200 text-base-content rounded-lg p-3 shadow-lg opacity-93 border border-base-300">
+
+                <p className="font-semibold">{label}</p>
+
+                <div className="divider my-0"></div>
+
+                <div className="flex flex-col gap-1 text-sm">
                   <div className="flex items-center gap-2">
                     <span className="h-3 w-3 rounded-sm bg-primary"></span>
                     <span>Deep Sleep: {deepSleep} hrs</span>
