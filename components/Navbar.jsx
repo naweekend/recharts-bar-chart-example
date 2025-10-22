@@ -1,6 +1,6 @@
 export const Navbar = () => {
   return (
-    <div className="fixed right-0 top-[70%] border border-base-content/50 border-dashed bg-base-200 rounded-tl-md rounded-bl-md p-2">
+    <div className="fixed right-0 top-[15%] border border-base-content/50 border-dashed bg-base-200 rounded-tl-md rounded-bl-md p-2">
       <ThemeSwitcher />
     </div>
   )
