@@ -13,13 +13,13 @@ import {
 
 export const MarksBarChart = () => {
   const data = [
-    { day: "Mon", deepSleep: 3.2, remSleep: 2.1 },
-    { day: "Tue", deepSleep: 3.8, remSleep: 1.9 },
-    { day: "Wed", deepSleep: 4.0, remSleep: 2.3 },
-    { day: "Thur", deepSleep: 2.9, remSleep: 2.5 },
-    { day: "Fri", deepSleep: 3.4, remSleep: 1.8 },
-    { day: "Sat", deepSleep: 4.1, remSleep: 2.6 },
-    { day: "Sun", deepSleep: 3.6, remSleep: 2.4 },
+    { day: "Monday", deepSleep: 3.2, remSleep: 2.1 },
+    { day: "Tuesday", deepSleep: 3.8, remSleep: 1.9 },
+    { day: "Wednesday", deepSleep: 4.0, remSleep: 2.3 },
+    { day: "Thursday", deepSleep: 2.9, remSleep: 2.5 },
+    { day: "Friday", deepSleep: 3.4, remSleep: 1.8 },
+    { day: "Saturday", deepSleep: 4.1, remSleep: 2.6 },
+    { day: "Sunday", deepSleep: 3.6, remSleep: 2.4 },
   ];
 
   return (
@@ -31,6 +31,9 @@ export const MarksBarChart = () => {
           dataKey="day"
           tick={{ fill: "var(--color-base-content)", fontSize: 12 }}
           stroke="var(--color-base-content)"
+          tickFormatter={(day) =>
+            window.innerWidth < 768 ? day.slice(0, 3) : day
+          }
         />
         <YAxis
           opacity={0.8}
@@ -48,9 +51,10 @@ export const MarksBarChart = () => {
             const { deepSleep, remSleep } = payload[0].payload;
 
             return (
-              <div className="bg-base-200 text-base-content rounded-lg p-3 shadow-lg opacity-93 border border-base-300">
+              <div className="bg-base-200 text-base-content rounded-lg p-3 shadow-lg opacity-96 border border-base-300">
 
-                <p className="font-semibold">{label}</p>
+                <p className="font-semibold hidden md:block">{label}</p>
+                <p className="font-semibold md:hidden block">{label.slice(0, 3)}</p>
 
                 <div className="divider my-0"></div>
 

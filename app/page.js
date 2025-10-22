@@ -4,9 +4,9 @@ import { Navbar } from "@/components/Navbar";
 export default async function Home() {
   return (
     <main className="flex gap-5 justify-center items-center min-h-screen">
-      <div className="w-300 h-100">
+      <Navbar />
+      <div id="chart-container" className="w-300 h-100">
         <MarksBarChart />
-        <Navbar />
       </div>
     </main>
   )

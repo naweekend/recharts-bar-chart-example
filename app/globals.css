@@ -2,3 +2,7 @@
 @plugin "daisyui" {
     themes: cmyk --default, dracula;
 }
+
+#chart-container *:focus {
+  outline: none !important;
+}
