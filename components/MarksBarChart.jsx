@@ -53,8 +53,7 @@ export const MarksBarChart = () => {
             return (
               <div className="bg-base-200 text-base-content rounded-lg p-3 shadow-lg opacity-96 border border-base-300">
 
-                <p className="font-semibold hidden md:block">{label}</p>
-                <p className="font-semibold md:hidden block">{label.slice(0, 3)}</p>
+                <p className="font-semibold">{label}</p>
 
                 <div className="divider my-0"></div>
 
